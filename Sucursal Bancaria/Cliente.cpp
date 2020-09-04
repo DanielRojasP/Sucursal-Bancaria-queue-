@@ -66,7 +66,7 @@ char Cliente::getFecha() {
 
 string Cliente::toString() {
     stringstream s;
-    s << "Numere de Ficha: " << getNumFicha() << endl;
+    s << "Numero de Ficha: " << getNumFicha() << endl;
     s << "Cedula: " << getCed() << endl;
     s << "Nombre: " << getNom() << endl;
     s << "Apellido: " << getApellido() << endl;
