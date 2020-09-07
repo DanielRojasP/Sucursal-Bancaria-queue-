@@ -7,16 +7,15 @@ Cliente::Cliente()
     nom = "";
     apellido = "";
     edad = 0;
-    fecha = new char();
-
+    fecha = "";
 }
 
 Cliente::~Cliente()
 {
-    //dtor
+
 }
 
-Cliente::Cliente(string num, string ced, string nom, string apellido, int edad, char* fecha)
+Cliente::Cliente(string num, string ced, string nom, string apellido, int edad, string fecha)
 {
     this->numFicha = num;
     this->ced = ced;
@@ -40,7 +39,7 @@ void Cliente::setCed(string ced) {
 void Cliente::setEdad(int edad) {
     this->edad = edad;
 }
-void Cliente::setFecha(char* fecha) {
+void Cliente::setFecha(string fecha) {
     this->fecha = fecha;
 }
 
@@ -59,8 +58,8 @@ string Cliente::getCed() {
 int Cliente::getEdad() {
     return edad;
 }
-char Cliente::getFecha() {
-    return *fecha;
+string Cliente::getFecha() {
+    return fecha;
 }
 
 
@@ -74,34 +73,6 @@ string Cliente::toString() {
     s << "Fecha: " << getFecha() << endl;
     return s.str();
 }
-void Cliente::insertar(Cliente* c) {
-    if (cant < tam) {
-        clientes[cant] = c;
-        cant++;
-    }
-}
-void Cliente::mostrar() {
-    ordenaClientes();
-    for (int i = 0; i < tam; i++) {
-        cout << clientes[i]->toString();
-    }
-}
-void Cliente::ordenaClientes() {
-    int aux = 0;
-    int min; //variable para almacenar el valor minimo
 
-    for (int i = 0; i < cant - 1; i++) { //ciclo que recorre todo el vector de NOTAS
-        min = i; // suponemos que el primer numero del vector es el minimo
 
-        for (int j = i + 1; j < cant; j++) { // (j = i+1) como como estamos diciendo que la primera pos
-                                //es la menor entonces que lo recorra desde la segunda pos.
-            if (clientes[j]->getEdad() < clientes[min]->getEdad()) {
-                min = j;
-                //clientes[min] = clientes[j]; //resuelve cual es el menor elemento del arreglo
-            }
-        }
-        clientes[aux] = clientes[min];
-        clientes[min] = clientes[i];
-        clientes[i] = clientes[aux];
-    }
-}
+

@@ -1,36 +1,33 @@
 #ifndef CLIENTE_H
 #define CLIENTE_H
 #include <iostream>
-#include <ctime>
 #include <sstream>
-#include <vector>
+
 using namespace std;
 class Cliente
 {
 public:
     Cliente();
     virtual ~Cliente();
-    Cliente(string, string, string, string, int, char*);
+    Cliente(string, string, string, string, int, string);
 
     string getNumFicha();
     string getCed();
     string getNom();
     string getApellido();
     int getEdad();
-    char getFecha();
+    string getFecha();
 
     void setNumFicha(string);
     void setCed(string);
     void setNom(string);
     void setApellido(string);
     void setEdad(int);
-    void setFecha(char*);
+    void setFecha(string);
 
 
     string toString();
-    void insertar(Cliente*);
-    void mostrar();
-    void ordenaClientes();
+
 
 protected:
 
@@ -40,11 +37,8 @@ private:
     string nom;
     string apellido;
     int edad;
-    char* fecha;
-    Cliente* clientes[1000];
-    int cant = 0;
-    int tam = 1000;
-
+    string fecha;
 };
 
 #endif // CLIENTE_H
+
